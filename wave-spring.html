@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wave Spring & Lattice Structure Optimization</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      color: #eee;
+      scroll-behavior: smooth;
+      height: 100%;
+    }
+
+    /* ================= NAV ================= */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: #00b4d8;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.6px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #eee;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* ================= CONTENT ================= */
+    #project-detail {
+      max-width: 1100px;
+      margin: 3rem auto;   /* REDUCED from 6rem */
+      padding: 2rem;
+    }
+
+    h2 {
+      color: #00b4d8;
+      border-left: 4px solid #00b4d8;
+      padding-left: 10px;
+      margin-top: 40px;   /* FIXED: was 100px */
+    }
+
+    h3 {
+      color: #00d9ff;
+      margin-top: 2rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .video-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .video-wrapper img {
+      width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 180, 216, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      color: #999;
+      font-size: .9rem;
+      padding: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h1>VENKATA SUBRAMANIAN M</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <section id="project-detail">
+
+    <!-- ================= WAVE SPRING ================= -->
+
+    <h2>Wave Spring</h2>
+
+    <p><strong>Abstract:</strong> The project investigates the response of polymer-based wave springs fabricated using Multi Jet Fusion (MJF) additive manufacturing. Different infill densities were applied to optimize mechanical properties. The study evaluated stiffness, plateau stress, and energy absorption, integrating both experimental and simulation approaches.</p>
+
+    <h3>1. Introduction</h3>
+    <p>
+      Wave springs are advanced mechanical elements used to absorb loads in confined spaces.
+      The objective of this research is to design a polymer wave spring using flexible PA-12 material
+      and analyze its response under compressive loading conditions.
+    </p>
+
+    <h3>2. Methodology</h3>
+    <ul>
+      <li>Modeling performed using CAD software (SolidWorks)</li>
+      <li>Manufacturing executed via MJF with PA-12 polymer</li>
+      <li>Test specimens included 80%, 90% and 100% infill density</li>
+      <li>Simulations conducted in Ansys Static Structural Module</li>
+    </ul>
+
+    <h3>3. Results and Discussion</h3>
+    <p>
+      Results showed increasing infill density significantly raised the spring’s stiffness.
+      100% infill spring exhibited maximum plateau stress.
+      Simulation results matched experimental behavior with an error margin under 6%.
+    </p>
+
+    <div class="video-wrapper">
+      <img src="video1.gif" alt="Wave Spring Simulation 1">
+      <img src="video2.gif" alt="Wave Spring Simulation 2">
+      <img src="converted_image.png" alt="Wave Spring Simulation 3">
+    </div>
+
+    <h3>4. Optimization</h3>
+    <p>
+      Using simulation, optimized spring geometry was achieved by modifying pitch angle
+      and number of crests. This led to increased energy absorption without compromising
+      compact design needs.
+    </p>
+
+    <h3>5. Conclusion</h3>
+    <p>
+      Wave springs produced via MJF demonstrated strong potential in replacing metallic springs
+      for moderate-load applications. Structural integrity, customization, and additive manufacturability
+      prove its feasibility.
+    </p>
+
+    <h3>6. Pre-Print Publication</h3>
+    <p>
+      <a href="https://doi.org/10.21203/rs.3.rs-2942067/v1" target="_blank">
+        https://doi.org/10.21203/rs.3.rs-2942067/v1
+      </a>
+    </p>
+ <!-- ===================== LATTICE STRUCTURE ===================== -->
+
+    <h2>Lattice Structure</h2>
+
+    <p><strong>Abstract:</strong> The lattice structure is derived from crest-to-crest wave spring geometry to enhance load-bearing capacity and energy absorption characteristics. Additive manufacturing enables complex overlapped and pin-reinforced lattice configurations.</p>
+
+    <h3>1. Introduction</h3>
+    <p>
+      Lattice structures provide superior energy absorption compared to conventional foam-based cores.
+      In this work, lattice structures are developed from overlapped and non-overlapped crest-to-crest
+      wave springs with pin reinforcements.
+    </p>
+
+    <h3>2. Design Concept</h3>
+    <ul>
+      <li>Overlapped crest-to-crest wave spring treated as lattice core</li>
+      <li>Pin-reinforced lattice configurations with 5 and 10 pins</li>
+      <li>Without-overlap lattice structures for comparative study</li>
+    </ul>
+
+    <div class="video-wrapper">
+      <img src="video3.png" alt="Overlapped lattice structure">
+    </div>
+
+    <h3>3. Manufacturing Process</h3>
+    <ul>
+      <li>Fabricated using HP Multi Jet Fusion (MJF)</li>
+      <li>Material: Polypropylene / polymer-based material</li>
+      <li>Post-processing by bead blasting technique</li>
+    </ul>
+
+    <h3>4. Mechanical Characterization</h3>
+    <p>
+      Compression tests were conducted under quasi-static loading conditions.
+      Load–compression and stress–strain responses were used to evaluate stiffness,
+      plateau stress, densification strain, and energy absorption efficiency.
+    </p>
+
+    <h3>5. Results and Discussion</h3>
+    <p>
+      Overlapped lattice structures with higher pin count exhibited superior plateau stress due to
+      improved load distribution and buckling resistance. Non-overlapped lattice structures showed
+      higher densification strain but reduced stiffness.
+    </p>
+
+    <div class="video-wrapper">
+      <img src="video4.gif" alt="Lattice compression behavior">
+      <img src="video5.gif" alt="Lattice compression behavior">
+    </div>
+
+    <h3>6. Energy Absorption Characteristics</h3>
+    <p>
+      The compression response of lattice structures consists of elastic, plateau, and densification regions.
+      Maximum energy absorption occurs within the plateau region. Overlapped lattice structures
+      demonstrated enhanced energy absorption efficiency.
+    </p>
+
+    <h3>7. Conclusion</h3>
+    <p>
+      The wave spring–based lattice structure presents a novel lightweight solution for energy absorption
+      applications. Overlapped and pin-reinforced lattice configurations provide improved mechanical
+      performance suitable for cushioning, vibration isolation, and impact mitigation.
+    </p>
+
+    <h3>6. Publication</h3>
+    <p>
+      <a href="https://doi.org/10.1007/s40430-024-04936-5" target="_blank">
+        https://doi.org/10.1007/s40430-024-04936-5
+      </a>
+    </p>
+
+    <br>
+    <a href="index.html" style="color:#90e0ef;text-decoration:underline">← Back to Home</a>
+
+  </section>
+
+  <footer>
+    <p>© 2025 Venkata Subramanian M | Wave Spring & Lattice Structure Project Page</p>
+  </footer>
+
+</body>
+</html>
