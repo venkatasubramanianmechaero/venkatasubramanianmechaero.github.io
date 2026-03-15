@@ -1,0 +1,496 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venkata Subramanian M | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html,body{
+font-family:'Inter',sans-serif;
+background:transparent;
+color:#eee;
+scroll-behavior:smooth;
+height:100%;
+min-height:100vh;
+}
+
+/* Background video */
+
+#bg-video{
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-3;
+}
+
+#bg-overlay{
+position:fixed;
+inset:0;
+background:transparent;
+z-index:-2;
+pointer-events:none;
+}
+
+/* Navigation */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1rem 3rem;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(8px);
+z-index:1000;
+}
+
+nav h1{
+color:#00b4d8;
+font-weight:700;
+font-size:1.15rem;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:2rem;
+}
+
+nav a{
+color:#eee;
+text-decoration:none;
+font-weight:500;
+transition:.2s;
+}
+
+nav a:hover{
+color:#00b4d8;
+transform:translateY(-2px);
+}
+
+/* Hero */
+
+#home{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:2rem;
+}
+
+.hero-inner{
+max-width:1100px;
+background:rgba(0,0,0,0.45);
+padding:3.5rem 2.5rem;
+border-radius:18px;
+backdrop-filter:blur(6px);
+}
+
+.hero-title{
+font-size:clamp(2.4rem,6vw,4rem);
+color:#00b4d8;
+font-weight:800;
+margin-bottom:18px;
+}
+
+.hero-sub{
+max-width:900px;
+margin:auto;
+margin-bottom:26px;
+line-height:1.7;
+}
+
+.hero-icons{
+display:flex;
+gap:24px;
+justify-content:center;
+}
+
+.hero-icon{
+width:44px;
+height:44px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:8px;
+background:rgba(0,180,216,0.06);
+border:1px solid rgba(0,180,216,0.12);
+color:#00cfee;
+font-size:1.2rem;
+text-decoration:none;
+transition:.2s;
+}
+
+.hero-icon:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 36px rgba(0,180,216,0.16);
+}
+
+/* Sections */
+
+section{
+max-width:1100px;
+margin:6rem auto;
+padding:2rem;
+}
+
+.fade-section{
+opacity:0;
+transform:translateY(40px);
+transition:.7s;
+}
+
+.fade-section.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+/* About */
+
+#about h2,
+#projects h2,
+#achievements h2{
+color:#00b4d8;
+font-size:2rem;
+margin-bottom:1rem;
+border-left:4px solid #00b4d8;
+padding-left:10px;
+}
+
+.about-wrapper{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:2rem;
+}
+
+.about-text{
+flex:1 1 55%;
+}
+
+.about-text p{
+line-height:1.8;
+margin-bottom:1rem;
+}
+
+.about-gif{
+flex:1 1 40%;
+text-align:center;
+}
+
+.about-gif img{
+max-width:100%;
+border-radius:12px;
+box-shadow:0 0 20px rgba(0,180,216,0.4);
+}
+
+/* Projects */
+
+.project{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:3rem;
+margin-top:4rem;
+background:rgba(255,255,255,0.05);
+border-radius:14px;
+padding:2rem;
+}
+
+.project:hover{
+transform:translateY(-8px);
+box-shadow:0 8px 20px rgba(0,180,216,0.25);
+}
+
+.project-content{
+flex:1;
+}
+
+.project-content h2{
+color:#00b4d8;
+font-size:1.5rem;
+margin-bottom:1rem;
+}
+
+.project-content p{
+line-height:1.7;
+}
+
+.project-content a{
+display:inline-block;
+margin-top:1rem;
+color:#00b4d8;
+text-decoration:none;
+font-weight:600;
+}
+
+.project-media{
+flex:1;
+text-align:center;
+}
+
+.project-media img,
+.project-media video{
+max-width:100%;
+border-radius:12px;
+box-shadow:0 0 20px rgba(0,180,216,0.4);
+}
+
+.reverse{
+flex-direction:row-reverse;
+}
+
+/* Resume Button */
+
+.resume-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 26px;
+background:#00b4d8;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:600;
+transition:0.3s;
+}
+
+.resume-btn:hover{
+background:#0096c7;
+transform:translateY(-3px);
+box-shadow:0 6px 15px rgba(0,180,216,0.4);
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+color:#999;
+font-size:.9rem;
+padding:2rem;
+margin-top:3rem;
+}
+
+/* Responsive */
+
+@media(max-width:850px){
+nav{padding:0.8rem 1rem;}
+.project,.reverse,.about-wrapper{flex-direction:column;}
+.hero-title{font-size:2rem;}
+}
+
+</style>
+</head>
+
+<body>
+
+<video id="bg-video" autoplay muted loop playsinline>
+<source src="bg.mp4" type="video/mp4">
+</video>
+
+<div id="bg-overlay"></div>
+
+<nav>
+<h1>VENKATA SUBRAMANIAN M</h1>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Work</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HOME -->
+
+<section id="home">
+<div class="hero-inner">
+
+<h1 class="hero-title">Mechanical Design Engineer</h1>
+
+<p class="hero-sub">
+Designing innovative mechanical systems with precision,
+creativity and analytical insight.
+</p>
+
+<div class="hero-icons">
+
+<a class="hero-icon"
+href="https://www.linkedin.com/in/venkata-subramanian-m-412353201/"
+target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+
+<a class="hero-icon"
+href="mailto:venkatasubramanian.mechaero@gmail.com">
+<i class="fas fa-envelope"></i>
+</a>
+
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="fade-section">
+
+<h2>About Me</h2>
+
+<div class="about-wrapper">
+
+<div class="about-text">
+<p>
+Mechanical Design Engineer specializing in
+Special Purpose Machine (SPM) design,
+product development and aeronautical applications.
+</p>
+
+<p>
+Expertise in CAD modeling, FEA and automation systems,
+focused on manufacturable engineering solutions.
+</p>
+</div>
+
+<div class="about-gif">
+<img src="about.png">
+</div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects" class="fade-section">
+
+<h2>Dynaspede Integrated Systems Pvt Ltd</h2>
+
+<div class="project">
+
+<div class="project-content">
+<h2>Differential Line Assembly – OEM</h2>
+<p>
+Designed differential line system with hydraulic actuation
+and precision alignment fixtures.
+</p>
+</div>
+
+<div class="project-media">
+<img src="project5.png">
+</div>
+
+</div>
+
+<div class="project reverse">
+
+<div class="project-content">
+<h2>Hydraulic Steering Test Rig</h2>
+<p>
+Retrofitted steering test rig with digital pressure logging
+and improved diagnostics.
+</p>
+</div>
+
+<div class="project-media">
+<img src="project2.gif">
+</div>
+
+</div>
+
+</section>
+
+<!-- ACHIEVEMENTS -->
+
+<section id="achievements" class="fade-section">
+
+<h2>Achievements</h2>
+
+<div class="project">
+
+<div class="project-content">
+
+<h2>MEGA ATV Championship</h2>
+
+<p>
+Participated in national-level MEGA ATV Championship
+contributing to suspension and drivetrain design.
+</p>
+
+</div>
+
+<div class="project-media">
+<img src="atv.gif">
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="fade-section" style="text-align:center">
+
+<h2 style="color:#00b4d8">Contact</h2>
+
+<p>
+
+📧
+<a href="mailto:venkatasubramanian.mechaero@gmail.com"
+style="color:#90e0ef">
+venkatasubramanian.mechaero@gmail.com
+</a>
+
+<br>
+
+📞 +91 90800 30345
+
+</p>
+
+<a href="resume.pdf" download class="resume-btn">
+<i class="fas fa-download"></i>
+Download Resume
+</a>
+
+</section>
+
+<footer>
+© 2025 Venkata Subramanian M
+</footer>
+
+<script>
+
+const fadeSections=document.querySelectorAll('.fade-section');
+
+const appear=()=>{
+
+fadeSections.forEach(section=>{
+const rect=section.getBoundingClientRect();
+
+if(rect.top<window.innerHeight-100){
+section.classList.add('visible');
+}
+
+});
+
+}
+
+window.addEventListener('scroll',appear);
+appear();
+
+</script>
+
+</body>
+</html>
+```
