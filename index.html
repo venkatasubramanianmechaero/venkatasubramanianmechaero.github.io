@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Venkata Subramanian M | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{font-family:'Inter',sans-serif;background:transparent;color:#eee;scroll-behavior:smooth;height:100%;min-height:100vh;}
+    #bg-video{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-3;background:transparent;}
+    #bg-overlay{position:fixed;inset:0;background:transparent;z-index:-2;pointer-events:none;}
+    nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);z-index:1000;}
+    nav h1{color:#00b4d8;font-weight:700;font-size:1.15rem;letter-spacing:0.6px;}
+    nav ul{display:flex;list-style:none;gap:2rem;}
+    nav a{color:#eee;text-decoration:none;font-weight:500;transition:.18s;}
+    nav a:hover{color:#00b4d8;transform:translateY(-2px);}
+    #home {height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;position:relative;z-index:2;}
+    .hero-inner {max-width:1100px;width:100%;margin: 0 auto;background:rgba(0,0,0,0.45);padding:3.5rem 2.5rem;border-radius:18px;backdrop-filter:blur(6px);}
+    .hero-title {font-size: clamp(2.4rem, 6vw, 4rem);color: #00b4d8;font-weight: 800;line-height: 1.02;text-shadow: 0 8px 28px rgba(0,180,216,0.16), 0 0 14px rgba(0,180,216,0.22), 0 0 40px rgba(0,180,216,0.08);margin-bottom: 18px;}
+    .hero-sub {max-width: 900px;margin: 0 auto 26px;color: #e6eef0;font-size: clamp(1rem, 2vw, 1.125rem);line-height: 1.75;opacity: 0.98;}
+    .hero-icons {display:flex;gap:24px;justify-content:center;margin-top: 6px;}
+    .hero-icon {width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;background: rgba(0,180,216,0.06);border: 1px solid rgba(0,180,216,0.12);color: #00cfee;font-size:1.2rem;transition: transform .18s ease, box-shadow .18s;text-decoration:none;}
+    .hero-icon:hover {transform: translateY(-6px);box-shadow: 0 18px 36px rgba(0,180,216,0.16);background: rgba(0,180,216,0.10);}
+    section {max-width:1100px;margin:6rem auto;padding:2rem;position:relative;z-index:2;}
+    .fade-section {opacity:0;transform:translateY(40px);transition:opacity .7s ease, transform .7s ease;}
+    .fade-section.visible {opacity:1;transform:translateY(0);}
+    #about h2, #achievements h2, #projects h2 {color:#00b4d8;font-size:2rem;margin-bottom:1rem;border-left:4px solid #00b4d8;padding-left:10px;}
+    .about-wrapper {display:flex;flex-wrap:wrap;align-items:center;gap:2rem;}
+    .about-text {flex:1 1 55%;min-width:280px;}
+    .about-text p {line-height:1.8;color:#eee;margin-bottom:1rem;}
+    .about-gif {flex:1 1 40%;text-align:center;}
+    .about-gif img {max-width:100%;border-radius:12px;box-shadow:0 0 20px rgba(0,180,216,0.4);}
+    .project {display:flex;align-items:center;justify-content:space-between;gap:3rem;margin-top:5rem;background:rgba(255,255,255,0.05);border-radius:14px;padding:2rem;backdrop-filter:blur(4px);}
+    .project:hover {transform:translateY(-8px);box-shadow:0 8px 20px rgba(0,180,216,0.25);}
+    .project-content {flex:1;}
+    .project-content h2 {color:#00b4d8;font-size:1.6rem;margin-bottom:1rem;}
+    .project-content p {color:#eee;line-height:1.8;font-size:1rem;}
+    .project-content a {display:inline-block;color:#00b4d8;margin-top:1rem;text-decoration:none;font-weight:600;}
+    .project-media {flex:1;text-align:center;}
+    .project-media img, .project-media video {max-width:100%;border-radius:12px;box-shadow:0 0 20px rgba(0,180,216,0.4);}
+    .reverse {flex-direction: row-reverse;}
+    footer {text-align:center;color:#999;font-size:.9rem;padding:2rem;margin-top:3rem;z-index:2;}
+    @media(max-width:850px){nav{padding:0.8rem 1rem;}.project, .reverse, .about-wrapper {flex-direction:column;}.hero-title {font-size: 2rem;}}
+  </style>
+</head>
+<body>
+
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div id="bg-overlay"></div>
+
+  <nav>
+    <h1>VENKATA SUBRAMANIAN M</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Work Experience</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="home">
+    <div class="hero-inner">
+      <h1 class="hero-title">Mechanical Design Engineer</h1>
+      <p class="hero-sub">Designing innovative mechanical systems with precision, creativity, and analytical insight — bringing engineering concepts to life through automation and design excellence.</p>
+      <div class="hero-icons">
+        <a class="hero-icon" href="https://www.linkedin.com/in/venkata-subramanian-m-412353201/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a class="hero-icon" href="mailto:venkatasubramanian.mechaero@gmail.com" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="fade-section">
+    <h2>About Me</h2>
+    <div class="about-wrapper">
+      <div class="about-text">
+        <p>I am a Mechanical Design Engineer specializing in Special Purpose Machine (SPM) design, product development, and aeronautical applications. My passion lies in solving complex problems with elegant, manufacturable design solutions.</p>
+        <p>With expertise in CAD modeling, FEA, and automation systems, I merge technical analysis with creative design to deliver efficient results. I believe great engineering is where precision meets innovation.</p>
+      </div>
+      <div class="about-gif"><img src="about.png" alt="Design Animation"></div>
+    </div>
+  </section>
+
+  <section id="about" class="fade-section">
+    <h2>Dynaspede Integrated System Private Limited</h2>
+  <div id="projects" class="fade-section">
+    <section class="project">
+      <div class="project-content">
+        <h2>Differential Line Assembly – OEM </h2>
+        <p>Designed and assembled a differential line system for precision alignment and end-of-line testing. Integrated hydraulic actuation and fixture placement for automotive component validation.</p>
+        <a href="differential-assembly.html">View Project →</a>
+      </div>
+      <div class="project-media"><img src="project5.png" alt="Differential Assembly"></div>
+    </section>
+
+    <section class="project reverse">
+      <div class="project-content">
+        <h2>Revamping Hydraulic Steering Test Rig – OEM</h2>
+        <p>Retrofitted an existing hydraulic test rig with new instrumentation, digital pressure logging, and updated control architecture. Improved reliability and diagnostics for OEM production validation.</p>
+        <a href="hydraulic-testbed.html">View Project →</a>
+      </div>
+      <div class="project-media"><img src="project2.gif" alt="Hydraulic Steering Test Bed"></div>
+    </section>
+
+    <section class="project">
+      <div class="project-content">
+        <h2>End of Line – EV Motor Transaxle Testing – OEM</h2>
+        <p>Developed a testing fixture for electric motor inspection and final QA in the EV assembly line. Combined vibration, insulation resistance, and torque mapping sensors with control systems.</p>
+        <a href="ev-motor-testing.html">View Project →</a>
+      </div>
+      <div class="project-media"><img src="project6.png" alt="EV Motor Testing"></div>
+    </section>
+
+    <section class="project reverse">
+      <div class="project-content">
+        <h2>Transaxle Test Rig – OEM</h2>
+        <p>Engineered a complete test rig for transaxle assemblies with load simulation, backlash detection, and real-time data capture. Enhanced validation capability in drivetrain production.</p>
+        <a href="transaxle-test-rig.html">View Project →</a>
+      </div>
+      <div class="project-media"><img src="project7.png" alt="Transaxle Test Rig"></div>
+    </section>
+
+<section id="work experience" class="fade-section">
+    <h2>Published & Pre-Print Project </h2>
+
+    <section class="project">
+      <div class="project-content">
+        <h2>Wave Spring & Lattice Structure Optimization</h2>
+        <p>Performed experimental and simulation-based analysis on crest-to-crest polymer wave springs using MJF additive manufacturing. Enhanced stiffness and plateau stress performance through geometric optimization — published in Springer Journal.</p>
+        <a href="wave-spring.html">View Project →</a>
+      </div>
+      <div class="project-media"><img src="project1.gif" alt="Wave Spring"></div>
+    </section>
+
+    <section class="project reverse">
+      <div class="project-content">
+        <h2>TIG Facing Process Analysis</h2>
+        <p>Investigated TIG facing parameters for AlCoCrFeNiCu alloy coatings on stainless steel. Achieved 18% hardness increase and 50% wear resistance improvement confirmed by SEM analysis.</p>
+        <a href="tig-facing.html">View Project →</a>
+      </div>
+      <div class="project-media"><img src="project4.gif" alt="TIG Process"></div>
+    </section>
+  </div>
+
+  <section id="achievements" class="fade-section">
+    <h2>Achievements</h2>
+    <section class="project">
+      <div class="project-content">
+        <h2>MEGA ATV Championship</h2>
+        <p>Participated in the National-level <b>MEGA ATV Championship</b> 2019 as TEAM BOLT contributing to the design, fabrication, and optimization of an All-Terrain Vehicle's suspension and drivetrain system. Gained hands-on experience in endurance testing, steering geometry, and chassis dynamics while representing the university team on a competitive platform.</p>
+      </div>
+      <div class="project-media"><img src="atv.gif" alt="MEGA ATV Championship"></div>
+    </section>
+  </section>
+
+  <section id="contact" class="fade-section" style="text-align:center;">
+    <h2 style="color:#00b4d8;">Contact</h2>
+    <p>📧 <a href="mailto:venkatasubramanian.mechaero@gmail.com" style="color:#90e0ef;">venkatasubramanian.mechaero@gmail.com</a><br>📞 +91 90800 30345</p>
+  </section>
+
+  <footer>© 2025 Venkata Subramanian M | Portfolio</footer>
+
+  <script>
+    const fadeSections = document.querySelectorAll('.fade-section');
+    const appear = () => {
+      fadeSections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) section.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', appear);
+    appear();
+  </script>
+</body>
+</html>
