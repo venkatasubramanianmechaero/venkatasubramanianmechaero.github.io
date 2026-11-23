@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ball &amp; Nut Hydraulic Steering Load Test Rig (Steering Testing Machine) | Venkata Subramanian M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #070b14;
+      --bg-card: rgba(16, 24, 40, 0.88);
+      --accent-gold: #ffb703;
+      --accent-cyan: #00d4ff;
+      --text-white: #ffffff;
+      --text-muted: #cbd5e1;
+      --border-subtle: rgba(255, 255, 255, 0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.75;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 4rem;
+      background: rgba(7, 11, 20, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 1000;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-white);
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: rgba(10, 18, 34, 0.9);
+      border: 1.5px solid var(--accent-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 22px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ffb703 0%, #ffa200 100%);
+      color: #070b14;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 183, 3, 0.4);
+    }
+    main {
+      max-width: 1180px;
+      margin: 3rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .hero-card, .content-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2.6rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 1.2rem;
+    }
+    .badge {
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: rgba(0, 212, 255, 0.12);
+      border: 1px solid rgba(0, 212, 255, 0.35);
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .badge.gold {
+      background: rgba(255, 183, 3, 0.14);
+      border-color: rgba(255, 183, 3, 0.45);
+      color: var(--accent-gold);
+    }
+    h1 {
+      font-size: clamp(2rem, 3.8vw, 2.75rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    h1 span { color: var(--accent-cyan); }
+    h2 {
+      color: var(--accent-gold);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+      margin-top: 1.8rem;
+    }
+    .media-box {
+      background: #040811;
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      overflow: hidden;
+      text-align: center;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .media-box img {
+      max-width: 88%;
+      max-height: 185px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+    .media-caption {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      margin-top: 0.8rem;
+    }
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+    }
+    .feature-list li {
+      padding: 1.1rem 1.4rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 4px solid var(--accent-cyan);
+      color: #f1f5f9;
+      font-size: 1rem;
+    }
+    .feature-list li strong {
+      color: var(--accent-gold);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+    th {
+      background: rgba(0, 212, 255, 0.16);
+      color: var(--accent-cyan);
+      padding: 12px 16px;
+      text-align: center;
+      font-weight: 700;
+    }
+    td {
+      padding: 12px 16px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #f1f5f9;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.4rem;
+    }
+    .calc-box {
+      background: rgba(255, 183, 3, 0.1);
+      border: 1px solid rgba(255, 183, 3, 0.35);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+    }
+    .calc-box h4 {
+      color: var(--accent-gold);
+      font-size: 1.45rem;
+      font-weight: 800;
+    }
+    .calc-box p {
+      font-size: 0.9rem;
+      color: #f8fafc;
+      margin: 0;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+    .project-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.2rem; }
+      .hero-card, .content-card { padding: 1.6rem; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <div class="brand-badge">V</div>
+      <span>VENKATA SUBRAMANIAN M</span>
+    </a>
+    <a href="index.html#systems" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+  </nav>
+
+  <main>
+    <div class="hero-card">
+      <div class="badge-row">
+        <span class="badge">Steering Testing Machine</span>
+        <span class="badge gold"><i class="fas fa-certificate"></i> IS 14269 : 1995 Standard • 160 ± 10 Bar</span>
+      </div>
+      <h1>Ball &amp; Nut Hydraulic Power Steering — <span>Load Test Rig</span></h1>
+      <p>
+        Engineered a comprehensive 4-station automated testing rig adhering strictly to <strong>IS 14269:1995</strong> standards for commercial vehicle power steering gears. The system transforms rotary input from the steering wheel into linear motion using a recirculating ball mechanism, utilizing pressurized ATF (Automatic Transmission Fluid) at <strong>160 ± 10 bar</strong> to evaluate torsion bar stiffness, spool displacement, and pitman arm torque transmission.
+      </p>
+
+      <div class="media-grid">
+        <div class="media-box">
+          <img src="project2.gif" alt="Ball and Nut Steering Gear Animated Flow">
+          <div class="media-caption">Fig 1. Hydraulic Assist &amp; Spool Valve Flow Animation</div>
+        </div>
+        <div class="media-box">
+          <img src="ballnut.png" alt="Recirculating Ball and Nut Steering Mechanism">
+          <div class="media-caption">Fig 2. Recirculating Ball &amp; Nut Steering Gear Architecture</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <h2><i class="fas fa-vial"></i> 4-Station Testing Architecture (IS 14269 : 1995)</h2>
+      <ul class="feature-list">
+        <li><strong>Station 1 — Air Leak Testing Station:</strong> Low-pressure pneumatic and high-pressure hydraulic leakage verification to validate sealing integrity and internal leakage limits.</li>
+        <li><strong>Station 2 — Kinematic &amp; Functional Testing Station:</strong> Evaluates steering travel, friction torque, mechanical backlash, and pressure–torque boost characteristics.</li>
+        <li><strong>Station 3 — High-Pressure Hydraulic Station (160 ± 10 Bar):</strong> Supplies ATF at rated operating pressure (160 ± 10 bar), flow, and temperature with closed-loop pressure feedback to test static, dynamic, and endurance loads.</li>
+        <li><strong>Station 4 — Automated ATF Oil Draining Station:</strong> Clean evacuation and filtration recovery of Automatic Transmission Fluid after endurance validation.</li>
+      </ul>
+    </div>
+
+    <div class="content-card">
+      <h2><i class="fas fa-calculator"></i> Hydraulic Motor &amp; Pump Selection Calculations</h2>
+      <p>Engineering sizing calculation performed for the hydraulic test circuit and actuation cylinders operating at <strong>160 ± 10 bar</strong>:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Cylinder</th>
+            <th>Bore (mm)</th>
+            <th>Stroke (mm)</th>
+            <th>Load (kN)</th>
+            <th>Time (sec)</th>
+            <th>Operating Pressure (bar)</th>
+            <th>Required Flow (LPM)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>C1</strong></td><td>50</td><td>300</td><td>32</td><td>5</td><td>160 ± 10 bar</td><td>7.1 LPM</td></tr>
+          <tr><td><strong>C2</strong></td><td>80</td><td>200</td><td>80</td><td>6</td><td>160 ± 10 bar</td><td>10.0 LPM</td></tr>
+          <tr><td><strong>C3</strong></td><td>100</td><td>150</td><td>125</td><td>4</td><td>160 ± 10 bar</td><td>17.6 LPM</td></tr>
+        </tbody>
+      </table>
+      <p>
+        <strong>Formulae Used:</strong> Pressure P = Force / Area (160 ± 10 bar) &nbsp;|&nbsp; Flow Q = Area × Velocity &nbsp;|&nbsp; Motor Power (kW) = (P × Q) / 600 (+15% safety margin → <strong>10 kW</strong>).
+      </p>
+      <div class="calc-grid">
+        <div class="calc-box">
+          <h4>20 – 50 LPM</h4>
+          <p>Selected Pump Flow Capacity</p>
+        </div>
+        <div class="calc-box">
+          <h4>160 ± 10 Bar</h4>
+          <p>Operating Pressure &amp; Relief Valve Setting</p>
+        </div>
+        <div class="calc-box">
+          <h4>10 kW (≈13 HP)</h4>
+          <p>Selected Drive Motor Power</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <h2><i class="fas fa-cogs"></i> Steering Gear Components &amp; Roles</h2>
+      <ul class="feature-list">
+        <li><strong>Ball Nut Mechanism:</strong> Converts rotary steering input to linear motion via recirculating ball bearings.</li>
+        <li><strong>Torsion Bar:</strong> Detects steering input torque and twists proportionally to actuate the control valve spool.</li>
+        <li><strong>Control Valve:</strong> Opens left/right pressure ports depending on steering direction.</li>
+        <li><strong>Piston and Cylinder:</strong> Executes power-assist motion through differential hydraulic pressure.</li>
+        <li><strong>Pitman Arm:</strong> Transmits sector shaft torque directly to the vehicle steering linkage system.</li>
+      </ul>
+    </div>
+
+    <div class="two-col">
+      <div class="content-card" style="margin-bottom:0;">
+        <h2><i class="fas fa-tachometer-alt"></i> Hydraulic Torque &amp; Assist</h2>
+        <p style="margin-bottom:0;">
+          Hydraulic torque refers to the force generated by ATF pressure acting over the piston area to assist driver input. The higher the steering load, the greater the fluid force that supports piston displacement.
+        </p>
+      </div>
+      <div class="content-card" style="margin-bottom:0;">
+        <h2><i class="fas fa-sliders-h"></i> Dry Test Condition</h2>
+        <p style="margin-bottom:0;">
+          In dry test (without fluid), only mechanical backlash and internal clearances can be detected. Full rotational assist, preload feedback, and return-to-center performance require pressurized fluid actuation.
+        </p>
+      </div>
+    </div>
+
+    <div class="project-nav">
+      <a href="index.html#systems" class="back-btn"><i class="fas fa-th-large"></i> All Projects</a>
+      <a href="transaxle-test-rig.html" class="back-btn">Next: Transaxle Test Rig <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Venkata Subramanian M | Ball &amp; Nut Hydraulic Power Steering Load Test Rig</p>
+  </footer>
+
+</body>
+</html>

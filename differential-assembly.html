@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Differential Line Assembly – OEM | Venkata Subramanian M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #070b12;
+      --bg-card: rgba(10, 18, 32, 0.94);
+      --border-cyan: rgba(0, 212, 255, 0.42);
+      --primary: #00d4ff;
+      --accent: #00f5d4;
+      --text-white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.8;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.15rem 3.5rem;
+      background: rgba(6, 12, 22, 0.95);
+      border-bottom: 2px solid var(--border-cyan);
+      z-index: 1000;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--text-white);
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #041019;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #041019;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 800;
+      transition: all 0.25s ease;
+    }
+    .back-btn:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+    main {
+      max-width: 1140px;
+      margin: 3rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .hero-card, .content-card {
+      background: var(--bg-card);
+      border: 2px solid var(--border-cyan);
+      border-radius: 22px;
+      padding: 2.8rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.2rem;
+    }
+    .badge {
+      font-size: 0.98rem;
+      font-weight: 700;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      background: rgba(0, 212, 255, 0.2);
+      border: 1.5px solid var(--primary);
+      color: var(--text-white);
+    }
+    .badge.role {
+      background: rgba(0, 245, 212, 0.18);
+      border-color: var(--accent);
+    }
+    h1 {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .lead {
+      color: var(--text-white);
+      font-size: 1.22rem;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+    .media-showcase {
+      margin-top: 2rem;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--primary);
+      background: #000;
+      text-align: center;
+      padding: 1rem;
+    }
+    .media-showcase img {
+      width: 100%;
+      max-height: 460px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .comp-box {
+      padding: 1.5rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid var(--border-cyan);
+    }
+    .comp-box h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .comp-box p {
+      color: var(--text-white);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.1rem;
+    }
+    .step-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem 1.4rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid var(--border-cyan);
+    }
+    .step-num {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #041019;
+      background: var(--primary);
+      min-width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-text {
+      font-size: 1.12rem;
+      color: var(--text-white);
+      font-weight: 600;
+    }
+    .project-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    footer {
+      text-align: center;
+      padding: 2.2rem;
+      color: var(--text-white);
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-top: 2px solid var(--border-cyan);
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.2rem; }
+      .hero-card, .content-card { padding: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <div class="brand-badge">VS</div>
+      <span>VENKATA SUBRAMANIAN M</span>
+    </a>
+    <a href="index.html#systems" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+  </nav>
+
+  <main>
+    <div class="hero-card">
+      <div class="badge-row">
+        <span class="badge">Project 01 • Dynaspede Integrated Systems</span>
+        <span class="badge role"><i class="fas fa-user-cog"></i> Role: Supporting Team Member in Designing Test Rigs</span>
+      </div>
+      <h1>Differential Line Assembly – OEM</h1>
+      <p class="lead">
+        A mechanical differential is a gear system in vehicles that allows drive wheels to rotate at different speeds while cornering, ensuring stability, traction, and reduced tire wear.
+      </p>
+      <div class="media-showcase" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; background: transparent; border: none; padding: 0;">
+        <div style="background: #040811; border: 2px solid var(--border-cyan); border-radius: 16px; padding: 1.2rem; text-align: center;">
+          <img src="project5.png" alt="Differential Gear Mechanism" style="width: 100%; height: 280px; object-fit: contain; border-radius: 10px;">
+          <div style="font-size: 1rem; font-weight: 700; color: var(--primary); margin-top: 0.85rem;">Fig 1. Crown Gear, Pinion Shaft &amp; Spider Gear Differential Assembly</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <h2><i class="fas fa-cogs"></i> Components Used</h2>
+      <div class="components-grid">
+        <div class="comp-box">
+          <h3><i class="fas fa-dharmachakra"></i> Differential Line</h3>
+          <p>Crown Gear, Pinion Shaft, Differential Housing, Bearings, Ring Nut, Seal, Springs, Shim, and Spider Gear.</p>
+        </div>
+        <div class="comp-box">
+          <h3><i class="fas fa-arrows-alt-h"></i> Whap Axle Line</h3>
+          <p>Precision axle alignment, sub-assembly integration, and structural support stations.</p>
+        </div>
+        <div class="comp-box">
+          <h3><i class="fas fa-link"></i> Shaft Connection</h3>
+          <p>Spline coupling and mechanical shaft engagement for torque transmission and EOL verification.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <h2><i class="fas fa-list-ol"></i> Steps of Assembly in Differential Line</h2>
+      <div class="steps-grid">
+        <div class="step-card"><span class="step-num">01</span><span class="step-text">Bearing Race Assembly</span></div>
+        <div class="step-card"><span class="step-num">02</span><span class="step-text">Overall Housing Measurement</span></div>
+        <div class="step-card"><span class="step-num">03</span><span class="step-text">Pinion Shaft Arrangement with Bearing</span></div>
+        <div class="step-card"><span class="step-num">04</span><span class="step-text">Pinion Shaft Press in Housing</span></div>
+        <div class="step-card"><span class="step-num">05</span><span class="step-text">Ring Nut Assembly on Pinion Shaft</span></div>
+        <div class="step-card"><span class="step-num">06</span><span class="step-text">Seal Arrangement</span></div>
+        <div class="step-card"><span class="step-num">07</span><span class="step-text">Differential Housing Manual Assembly</span></div>
+        <div class="step-card"><span class="step-num">08</span><span class="step-text">Nut Runner Tightening Setup for Differential Housing</span></div>
+        <div class="step-card"><span class="step-num">09</span><span class="step-text">Crown Gear Press on Differential Housing Shaft</span></div>
+        <div class="step-card"><span class="step-num">10</span><span class="step-text">Bearing Press on Spider Gear Shaft</span></div>
+        <div class="step-card"><span class="step-num">11</span><span class="step-text">Crown Gear and Pinion Backlash Checking Setup</span></div>
+        <div class="step-card"><span class="step-num">12</span><span class="step-text">Air Leak Test Setup with Engraving</span></div>
+      </div>
+    </div>
+
+    <div class="project-nav">
+      <a href="index.html#systems" class="back-btn"><i class="fas fa-th-large"></i> All Projects</a>
+      <a href="hydraulic-testbed.html" class="back-btn">Next: Hydraulic Steering Test Rig <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Venkata Subramanian M | Differential Line Assembly – Dynaspede</p>
+  </footer>
+
+</body>
+</html>

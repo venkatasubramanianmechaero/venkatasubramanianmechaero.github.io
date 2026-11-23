@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Venkata Subramanian M | Mechanical Design, SPM, Test Rigs &amp; FEA Engineering Portfolio</title>
+  <meta name="description" content="Portfolio of Venkata Subramanian M - Mechanical Design Engineer with 3+ years experience in Special Purpose Machines (SPM), OEM Load Test Rigs, 160 ± 10 Bar Hydraulic Systems, and ANSYS FEA Simulation.">
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       1. ROOT VARIABLES & GLOBAL RESETS (EnveeTech Corporate Dark Theme)
+       ========================================================================== */
+    :root {
+      --bg-dark: #070b14;
+      --bg-card: rgba(16, 24, 40, 0.82);
+      --bg-card-hover: rgba(22, 34, 58, 0.92);
+      --bg-glass: rgba(11, 19, 36, 0.78);
+      --accent-gold: #ffb703;
+      --accent-gold-glow: rgba(255, 183, 3, 0.25);
+      --accent-cyan: #00b4d8;
+      --accent-cyan-glow: rgba(0, 180, 216, 0.25);
+      --accent-blue: #023e8a;
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-dim: #94a3b8;
+      --border-subtle: rgba(255, 255, 255, 0.1);
+      --border-active: rgba(255, 183, 3, 0.45);
+      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --container-width: 1240px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ambient Background Video & Subtle Grid */
+    #bg-video {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: -2;
+      opacity: 0.28;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-smooth);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ==========================================================================
+       2. TYPOGRAPHY & SECTION HEADERS
+       ========================================================================== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      background: rgba(0, 180, 216, 0.12);
+      padding: 6px 18px;
+      border-radius: 30px;
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    .section-title span {
+      color: var(--accent-gold);
+    }
+
+    .section-subtitle {
+      max-width: 740px;
+      margin: 0.8rem auto 0;
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR (EnveeTech Glass Style)
+       ========================================================================== */
+    header.main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(7, 11, 20, 0.86);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 42px;
+      height: 42px;
+      background: rgba(10, 18, 34, 0.9);
+      border: 1.5px solid var(--accent-gold);
+      color: var(--accent-gold);
+      font-weight: 800;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px var(--accent-gold-glow);
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      font-size: 0.74rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-gold);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-gold);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(10, 18, 34, 0.6);
+      border: 1.5px solid var(--accent-gold);
+      color: var(--accent-gold) !important;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 7px 18px;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px var(--accent-gold-glow);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-gold);
+      color: #070b14 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 183, 3, 0.4);
+    }
+
+    .mobile-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Floating Social Sidebar */
+    .floating-socials {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 99;
+    }
+
+    .social-pill {
+      width: 42px;
+      height: 42px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .social-pill:hover {
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+      transform: translateX(5px) scale(1.08);
+      box-shadow: 0 6px 20px var(--accent-gold-glow);
+    }
+
+    /* ==========================================================================
+       4. HERO BANNER SECTION (Exact Lingeshwaran Reference Layout)
+       ========================================================================== */
+    section.hero-banner {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 130px;
+      padding-bottom: 70px;
+      background: linear-gradient(135deg, rgba(6, 11, 22, 0.88) 0%, rgba(8, 16, 32, 0.82) 100%);
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .hero-glow-1 {
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.16) 0%, transparent 70%);
+      top: 5%;
+      right: 5%;
+    }
+
+    .hero-glow-2 {
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(255, 183, 3, 0.08) 0%, transparent 70%);
+      top: 20%;
+      left: 0%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Experience Badge */
+    .hero-experience-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(13, 23, 42, 0.88);
+      border: 1px solid rgba(255, 183, 3, 0.5);
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(255, 183, 3, 0.15);
+    }
+
+    .hero-experience-badge .badge-accent {
+      color: #ffb703;
+      font-weight: 800;
+    }
+
+    /* Main Title */
+    .hero-title-main {
+      font-size: clamp(2.3rem, 4.4vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.12;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-title-main .cyan-gradient {
+      background: linear-gradient(135deg, #00f2fe 0%, #00b4d8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(0, 212, 255, 0.35));
+      display: block;
+    }
+
+    /* Glowing gold dash line */
+    .hero-gold-dash {
+      width: 75px;
+      height: 3px;
+      background: linear-gradient(90deg, #ffb703 0%, rgba(255, 183, 3, 0) 100%);
+      border-radius: 2px;
+      margin-bottom: 1.4rem;
+    }
+
+    /* Lead Text */
+    .hero-desc-text {
+      font-size: 1.05rem;
+      color: #e2e8f0;
+      line-height: 1.68;
+      margin-bottom: 0.6rem;
+      max-width: 630px;
+    }
+
+    .hero-desc-subtext {
+      font-size: 0.96rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 1.8rem;
+      max-width: 630px;
+    }
+
+    /* 4 Feature Pills Row */
+    .hero-feature-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 1.8rem;
+    }
+
+    .feature-pill-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(11, 20, 38, 0.82);
+      border: 1px solid rgba(0, 180, 216, 0.32);
+      border-radius: 25px;
+      padding: 7px 15px;
+      font-size: 0.84rem;
+      color: #f1f5f9;
+      font-weight: 500;
+      backdrop-filter: blur(8px);
+      transition: var(--transition-smooth);
+    }
+
+    .feature-pill-item:hover {
+      border-color: rgba(0, 212, 255, 0.6);
+      background: rgba(16, 30, 58, 0.92);
+      transform: translateY(-2px);
+    }
+
+    .feature-pill-item i {
+      color: #00d4ff;
+      font-size: 0.88rem;
+    }
+
+    /* OEM & Industry Exposure Row */
+    .hero-global-exposure {
+      margin-bottom: 2rem;
+    }
+
+    .exposure-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #00d4ff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .exposure-countries {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .exposure-countries .dot {
+      color: #ffb703;
+      font-size: 0.8rem;
+    }
+
+    /* Hero Buttons */
+    .hero-buttons-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .btn-gold-pill {
+      background: linear-gradient(135deg, #ffb703 0%, #ffa200 100%);
+      color: #070b14 !important;
+      font-weight: 700;
+      padding: 13px 30px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(255, 183, 3, 0.35);
+      font-size: 0.96rem;
+      transition: var(--transition-smooth);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-gold-pill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(255, 183, 3, 0.5);
+      color: #000 !important;
+    }
+
+    .btn-outline-pill {
+      background: rgba(11, 20, 38, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #ffffff !important;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.96rem;
+      backdrop-filter: blur(10px);
+      transition: var(--transition-smooth);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-outline-pill:hover {
+      border-color: #00d4ff;
+      color: #00d4ff !important;
+      background: rgba(16, 30, 58, 0.9);
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================================================
+       CORE COMPETENCIES CARD (Right Side)
+       ========================================================================== */
+    .hero-visual {
+      position: relative;
+      z-index: 2;
+    }
+
+    .core-competencies-card {
+      background: rgba(10, 18, 34, 0.88);
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+    }
+
+    .core-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .core-title-wrap h3 {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #00d4ff;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .core-underline {
+      width: 42px;
+      height: 2px;
+      background: #00d4ff;
+      border-radius: 2px;
+      box-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+    }
+
+    .status-live-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: #10b981;
+      font-weight: 600;
+    }
+
+    .status-live-dot .green-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulseGlow 2s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.65; }
+    }
+
+    .core-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .core-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(14, 25, 48, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 13px 16px;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .core-item:hover {
+      background: rgba(20, 36, 68, 0.95);
+      border-color: rgba(0, 212, 255, 0.45);
+      transform: translateX(4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .core-icon-box {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      background: rgba(0, 180, 216, 0.1);
+      border: 1px solid rgba(0, 180, 216, 0.35);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00d4ff;
+      font-size: 1.1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .core-item:hover .core-icon-box {
+      background: rgba(0, 212, 255, 0.22);
+      border-color: #00d4ff;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+    }
+
+    .core-text h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 2px;
+      line-height: 1.3;
+    }
+
+    .core-text p {
+      font-size: 0.79rem;
+      color: #cbd5e1;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .core-arrow {
+      margin-left: auto;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      transition: var(--transition-smooth);
+    }
+
+    .core-item:hover .core-arrow {
+      color: #00d4ff;
+      transform: translateX(3px);
+    }
+
+    /* ==========================================================================
+       HERO BOTTOM STATS BANNER (5 Metrics)
+       ========================================================================== */
+    .hero-stats-banner {
+      background: rgba(8, 15, 28, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 1.8rem 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat-banner-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .stat-banner-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      background: rgba(0, 180, 216, 0.12);
+      border: 1px solid rgba(0, 180, 216, 0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00d4ff;
+      font-size: 1.15rem;
+    }
+
+    .stat-banner-icon.check-icon {
+      background: rgba(16, 185, 129, 0.14);
+      border-color: rgba(16, 185, 129, 0.45);
+      color: #10b981;
+    }
+
+    .stat-banner-info h3 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-banner-info p {
+      font-size: 0.79rem;
+      color: #cbd5e1;
+      line-height: 1.35;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       5. CORE PROJECTS SHOWCASE SECTION (EnveeTech 6-Block Grid Style)
+       ========================================================================== */
+    section.systems-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .systems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .system-card {
+      background: #000000;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+
+    .system-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 15px 35px var(--accent-cyan-glow);
+    }
+
+    .system-img-wrap {
+      height: 210px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background: #050a14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 18px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .system-img-wrap img {
+      max-width: 86%;
+      max-height: 150px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      border-radius: 6px;
+      transition: transform 0.5s ease;
+    }
+
+    .system-card:hover .system-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .system-overlay-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(7, 11, 20, 0.88);
+      backdrop-filter: blur(6px);
+      color: var(--accent-gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 12px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 183, 3, 0.35);
+      z-index: 2;
+    }
+
+    .system-body {
+      background: #050912;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      flex: 1;
+    }
+
+    .system-body h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.35;
+      margin-bottom: 0.3rem;
+    }
+
+    .system-body p.desc {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      line-height: 1.58;
+      margin-bottom: 0.5rem;
+    }
+
+    .spec-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      background: rgba(255, 183, 3, 0.16);
+      color: #ffb703;
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 183, 3, 0.45);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       6. WORK EXPERIENCE, EDUCATION & HONORS (EnveeTech Gallery Row Style)
+       ========================================================================== */
+    section.projects-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+    }
+
+    .project-row {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.2rem;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.8rem;
+      backdrop-filter: blur(14px);
+      transition: var(--transition-smooth);
+    }
+
+    .project-row:hover {
+      border-color: var(--accent-gold);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent-gold-glow);
+      transform: translateY(-5px);
+    }
+
+    .project-row.reversed {
+      direction: rtl;
+    }
+
+    .project-row.reversed > * {
+      direction: ltr;
+    }
+
+    .project-meta-top {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 0.8rem;
+    }
+
+    .proj-company {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .proj-date {
+      font-size: 0.8rem;
+      color: #f8fafc;
+      background: rgba(0, 180, 216, 0.18);
+      border: 1px solid rgba(0, 180, 216, 0.35);
+      padding: 3px 12px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .project-details h3 {
+      font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+      line-height: 1.25;
+    }
+
+    .project-details .proj-role {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent-gold);
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+
+    .project-details p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-highlights {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-highlights li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      margin-bottom: 9px;
+      line-height: 1.55;
+    }
+
+    .project-highlights li::before {
+      content: "\f00c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 3px;
+      color: var(--accent-cyan);
+      font-size: 0.82rem;
+    }
+
+    .proj-tags-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .proj-tag {
+      font-size: 0.78rem;
+      background: rgba(255, 183, 3, 0.12);
+      color: var(--accent-gold);
+      border: 1px solid rgba(255, 183, 3, 0.28);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .project-media-wrap {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 280px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      border: 1px solid var(--border-subtle);
+      background: #050a14;
+    }
+
+    .project-media-wrap img {
+      max-width: 90%;
+      max-height: 240px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      transition: transform 0.5s ease;
+    }
+
+    .project-row:hover .project-media-wrap img {
+      transform: scale(1.04);
+    }
+
+    /* ==========================================================================
+       7. SKILLS / EXPERTISE SECTION (4 Category Cards)
+       ========================================================================== */
+    section.skills-section {
+      padding: 6rem 0;
+      position: relative;
+      background: linear-gradient(180deg, rgba(7, 11, 20, 0.95) 0%, rgba(10, 18, 35, 0.9) 100%);
+    }
+
+    .skills-categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .skill-category-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2.2rem 1.8rem;
+      backdrop-filter: blur(14px);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-category-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-cyan), transparent);
+      opacity: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .skill-category-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 180, 216, 0.35);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+    }
+
+    .skill-category-card:hover::before {
+      opacity: 1;
+    }
+
+    .skill-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 1.2rem;
+    }
+
+    .skill-cat-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: rgba(0, 180, 216, 0.12);
+      border: 1px solid rgba(0, 180, 216, 0.35);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-cyan);
+      font-size: 1.15rem;
+    }
+
+    .skill-category-card:nth-child(2) .skill-cat-icon {
+      background: rgba(255, 183, 3, 0.12);
+      border-color: rgba(255, 183, 3, 0.35);
+      color: var(--accent-gold);
+    }
+
+    .skill-category-card:nth-child(2)::before {
+      background: linear-gradient(90deg, var(--accent-gold), transparent);
+    }
+
+    .skill-category-card:nth-child(3) .skill-cat-icon {
+      background: rgba(0, 212, 255, 0.12);
+      border-color: rgba(0, 212, 255, 0.35);
+      color: #00d4ff;
+    }
+
+    .skill-category-card:nth-child(4) .skill-cat-icon {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.35);
+      color: #10b981;
+    }
+
+    .skill-category-card:nth-child(4)::before {
+      background: linear-gradient(90deg, #10b981, transparent);
+    }
+
+    .skill-cat-header h3 {
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .skill-items-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .skill-items-list li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 0.92rem;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+
+    .skill-items-list li::before {
+      content: "\f058";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--accent-cyan);
+      font-size: 0.84rem;
+    }
+
+    .skill-category-card:nth-child(2) .skill-items-list li::before {
+      color: var(--accent-gold);
+    }
+
+    .skill-category-card:nth-child(4) .skill-items-list li::before {
+      color: #10b981;
+    }
+
+    /* ==========================================================================
+       8. SOFTWARE PROFICIENCY SECTION
+       ========================================================================== */
+    section.software-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .software-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .software-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2.4rem 1.8rem;
+      text-align: center;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .software-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px var(--accent-cyan-glow);
+    }
+
+    .software-icon-wrap {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      background: rgba(0, 180, 216, 0.12);
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--accent-cyan);
+      margin-bottom: 1.2rem;
+      transition: var(--transition-smooth);
+    }
+
+    .software-card:hover .software-icon-wrap {
+      background: var(--accent-cyan);
+      color: #070b14;
+      transform: rotate(5deg) scale(1.1);
+    }
+
+    .software-card h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .software-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .software-level {
+      margin-top: 1.1rem;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent-gold);
+      background: rgba(255, 183, 3, 0.12);
+      padding: 4px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 183, 3, 0.3);
+    }
+
+    /* ==========================================================================
+       9. CORPORATE FOOTER & CONTACT (EnveeTech Style)
+       ========================================================================== */
+    footer.main-footer {
+      background: #04070d;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 5rem;
+      padding-bottom: 2rem;
+      position: relative;
+    }
+
+    .footer-cta-box {
+      background: linear-gradient(135deg, rgba(2, 62, 138, 0.45), rgba(7, 11, 20, 0.92));
+      border: 1px solid rgba(0, 180, 216, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .footer-cta-box h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-cta-box p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .contact-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.8rem;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+
+    .contact-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-4px);
+    }
+
+    .contact-card i {
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+    }
+
+    .contact-card h4 {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-card a,
+    .contact-card span {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      word-break: break-word;
+    }
+
+    .contact-card a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2rem;
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-socials a {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+    }
+
+    .footer-socials a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 44px;
+      height: 44px;
+      background: var(--accent-gold);
+      color: #070b14;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 20px var(--accent-gold-glow);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-smooth);
+      z-index: 999;
+      cursor: pointer;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(255, 183, 3, 0.4);
+    }
+
+    /* ==========================================================================
+       10. RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1200px) {
+      .hero-stats-banner {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-stats-banner {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 2.5rem;
+      }
+
+      .floating-socials {
+        display: none;
+      }
+
+      .project-row,
+      .project-row.reversed {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-row.reversed {
+        direction: ltr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #070b14;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--border-subtle);
+        transform: translateY(-150%);
+        transition: var(--transition-smooth);
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+      }
+
+      .hero-stats-banner {
+        grid-template-columns: 1fr;
+        padding: 1.4rem;
+        gap: 1.2rem;
+      }
+
+      .project-media-wrap {
+        height: 260px;
+      }
+
+      .footer-cta-box {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="bg.mp4" type="video/mp4">
+  </video>
+
+  <!-- ==========================================
+       FLOATING SOCIAL QUICK ACTIONS
+       ========================================== -->
+  <aside class="floating-socials" aria-label="Social Profiles">
+    <a href="mailto:venkatasubramanian.mechaero@gmail.com" class="social-pill" title="Send Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="tel:+919080030345" class="social-pill" title="Call Phone">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/919080030345" target="_blank" class="social-pill" title="WhatsApp Message">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/venkata-subramanian-m-412353201/" target="_blank" class="social-pill" title="LinkedIn Profile">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="#contact" class="social-pill" title="Quick Contact">
+      <i class="fas fa-paper-plane"></i>
+    </a>
+  </aside>
+
+  <!-- ==========================================
+       HEADER & NAVIGATION
+       ========================================== -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo">
+        <div class="logo-badge">V</div>
+        <div class="brand-text">
+          <h1>VENKATA SUBRAMANIAN M</h1>
+          <span>Mechanical Design, SPM, Test Rigs &amp; Automation</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#systems">Projects</a></li>
+          <li><a href="#experience">Experience &amp; R&amp;D</a></li>
+          <li><a href="#skills">Skills &amp; Expertise</a></li>
+          <li><a href="#software">Software</a></li>
+          <li><a href="#contact" class="nav-cta"><i class="fas fa-paper-plane"></i> Let's Talk</a></li>
+        </ul>
+      </nav>
+
+      <div class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO BANNER SECTION
+       ========================================== -->
+  <section class="hero-banner" id="home">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left Hero Content -->
+        <div class="hero-content">
+          <div class="hero-experience-badge">
+            <span class="badge-accent">3+ YEARS</span> OF PROFESSIONAL EXPERIENCE
+          </div>
+
+          <h1 class="hero-title-main">
+            Mechanical Design, SPM &amp; <br>
+            <span class="cyan-gradient">Test Rig Engineering</span>
+          </h1>
+
+          <div class="hero-gold-dash"></div>
+
+          <p class="hero-desc-text">
+            Delivering turnkey Special Purpose Machines (SPM), automated end-of-line (EOL) load test rigs, high-pressure fluid power systems, and advanced ANSYS FEA simulations.
+          </p>
+          <p class="hero-desc-subtext">
+            From RFQ concept &amp; hydraulic calculations to GD&amp;T manufacturing release—built with precision, validated by science.
+          </p>
+
+          <!-- 4 Feature Pills -->
+          <div class="hero-feature-pills">
+            <div class="feature-pill-item">
+              <i class="fas fa-cogs"></i>
+              <span>Turnkey SPM &amp; Test Rigs</span>
+            </div>
+            <div class="feature-pill-item">
+              <i class="fas fa-oil-can"></i>
+              <span>160 ± 10 Bar Hydraulic Sizing</span>
+            </div>
+            <div class="feature-pill-item">
+              <i class="fas fa-cube"></i>
+              <span>ANSYS Non-Linear &amp; ACP FEA</span>
+            </div>
+            <div class="feature-pill-item">
+              <i class="fas fa-award"></i>
+              <span>Springer Nature Published</span>
+            </div>
+          </div>
+
+          <!-- OEM & Industry Exposure Row -->
+          <div class="hero-global-exposure">
+            <div class="exposure-label">
+              <i class="fas fa-industry"></i> OEM &amp; INDUSTRY EXPOSURE
+            </div>
+            <div class="exposure-countries">
+              <span>Steering Testing Machine</span> <span class="dot">•</span>
+              <span>Tata Transaxle OEM</span> <span class="dot">•</span>
+              <span>EV Powertrain OEMs</span> <span class="dot">•</span>
+              <span>AvironiX Drones</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="hero-buttons-row">
+            <a href="#systems" class="btn-gold-pill">
+              Explore Projects <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn-outline-pill">
+              <i class="fas fa-comment-dots"></i> Get In Touch
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual Card (Core Competencies) -->
+        <div class="hero-visual">
+          <div class="core-competencies-card">
+            <div class="core-card-header">
+              <div class="core-title-wrap">
+                <h3>CORE COMPETENCIES</h3>
+                <div class="core-underline"></div>
+              </div>
+              <div class="status-live-dot">
+                <span class="green-dot"></span> Available for Roles
+              </div>
+            </div>
+
+            <div class="core-items-list">
+              <a href="#systems" class="core-item">
+                <div class="core-icon-box">
+                  <i class="fas fa-industry"></i>
+                </div>
+                <div class="core-text">
+                  <h4>Turnkey SPM &amp; EOL Test Rig Design</h4>
+                  <p>Steering Testing Machine, Tata Transaxle &amp; EV Motor test beds</p>
+                </div>
+                <i class="fas fa-chevron-right core-arrow"></i>
+              </a>
+
+              <a href="hydraulic-testbed.html" class="core-item">
+                <div class="core-icon-box">
+                  <i class="fas fa-gauge-high"></i>
+                </div>
+                <div class="core-text">
+                  <h4>Hydraulic &amp; Pneumatic System Sizing</h4>
+                  <p>160 ± 10 bar, 40–60 LPM, 10–55 kW drives &amp; IS 14269:1995</p>
+                </div>
+                <i class="fas fa-chevron-right core-arrow"></i>
+              </a>
+
+              <a href="#skills" class="core-item">
+                <div class="core-icon-box">
+                  <i class="fas fa-drafting-compass"></i>
+                </div>
+                <div class="core-text">
+                  <h4>3D CAD Modeling &amp; GD&amp;T (ASME Y14.5)</h4>
+                  <p>SolidWorks, CATIA V5, AutoCAD, DraftSight &amp; SAP BOMs</p>
+                </div>
+                <i class="fas fa-chevron-right core-arrow"></i>
+              </a>
+
+              <a href="wave-spring.html" class="core-item">
+                <div class="core-icon-box">
+                  <i class="fas fa-cubes"></i>
+                </div>
+                <div class="core-text">
+                  <h4>ANSYS FEA &amp; ACP Composite Simulation</h4>
+                  <p>Static, Dynamic, Explicit, Modal (Free-Free/Fixed) &amp; ACP</p>
+                </div>
+                <i class="fas fa-chevron-right core-arrow"></i>
+              </a>
+
+              <a href="ev-motor-testing.html" class="core-item">
+                <div class="core-icon-box">
+                  <i class="fas fa-arrows-left-right-to-line"></i>
+                </div>
+                <div class="core-text">
+                  <h4>Conveyors &amp; Material Handling Systems</h4>
+                  <p>Chain drive, power-raised rollers &amp; ±0.2 mm lift-and-locate</p>
+                </div>
+                <i class="fas fa-chevron-right core-arrow"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Bottom Stats Banner (5 Items) -->
+      <div class="hero-stats-banner">
+        <div class="stat-banner-item">
+          <div class="stat-banner-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="stat-banner-info">
+            <h3>3+</h3>
+            <p>Years Experience in SPM &amp; Machine Design</p>
+          </div>
+        </div>
+
+        <div class="stat-banner-item">
+          <div class="stat-banner-icon"><i class="fas fa-oil-can"></i></div>
+          <div class="stat-banner-info">
+            <h3>160 ± 10 Bar</h3>
+            <p>High-Pressure Hydraulic Power Pack Sizing</p>
+          </div>
+        </div>
+
+        <div class="stat-banner-item">
+          <div class="stat-banner-icon"><i class="fas fa-gears"></i></div>
+          <div class="stat-banner-info">
+            <h3>6+</h3>
+            <p>Turnkey OEM Test Rigs &amp; Research Projects</p>
+          </div>
+        </div>
+
+        <div class="stat-banner-item">
+          <div class="stat-banner-icon"><i class="fas fa-book-journal-whills"></i></div>
+          <div class="stat-banner-info">
+            <h3>&lt;6% Error</h3>
+            <p>Springer Published FEA vs. Experiment</p>
+          </div>
+        </div>
+
+        <div class="stat-banner-item">
+          <div class="stat-banner-icon check-icon"><i class="fas fa-check"></i></div>
+          <div class="stat-banner-info">
+            <h3>9.55 CGPA</h3>
+            <p>M.Tech Aeronautical &amp; B.E. Mechanical</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CORE ENGINEERING PROJECTS (EnveeTech Block Grid)
+       ========================================== -->
+  <section class="systems-section" id="systems">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 3rem;">
+        <span class="section-tag">Turnkey OEM &amp; Research Portfolio</span>
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <p class="section-subtitle">
+          Click on any project card below to explore detailed assembly workflows, testing standards, engineering calculations, and simulation results.
+        </p>
+      </div>
+
+      <div class="systems-grid">
+
+        <!-- Project 1: Hydraulic Steering Load Test Rig (Steering Testing Machine) -->
+        <a href="hydraulic-testbed.html" class="system-card-link" style="display: flex; text-decoration: none; color: inherit; height: 100%;">
+          <div class="system-card">
+            <div class="system-img-wrap">
+              <span class="system-overlay-tag">Project 01 • Steering Testing Machine</span>
+              <img src="project2.gif" alt="Ball & Nut Hydraulic Power Steering Load Test Rig">
+            </div>
+            <div class="system-body">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <p style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin: 0;">
+                    <i class="fas fa-gauge-high" style="margin-right: 5px;"></i> IS 14269:1995 • 160 ± 10 Bar / 50 LPM
+                  </p>
+                  <i class="fas fa-arrow-up-right-from-square" style="color: var(--accent-gold); font-size: 0.95rem;"></i>
+                </div>
+                <h3>Ball &amp; Nut Hydraulic Steering Load Test Rig</h3>
+                <p class="desc">4-station automated test bench (Air Leak, Kinematic, 160 ± 10 bar High-Pressure Hydraulic, and Automated ATF Oil Draining) with 10 kW closed-loop feedback.</p>
+              </div>
+              <div>
+                <span class="spec-tag">Explore Hydraulic Test Rig →</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 2: Automotive Transaxle Load & Endurance Test Rig -->
+        <a href="transaxle-test-rig.html" class="system-card-link" style="display: flex; text-decoration: none; color: inherit; height: 100%;">
+          <div class="system-card">
+            <div class="system-img-wrap">
+              <span class="system-overlay-tag">Project 02 • Major Automotive OEM (Tata)</span>
+              <img src="project7.png" alt="Automotive Transaxle Load & Endurance Test Rig">
+            </div>
+            <div class="system-body">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <p style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin: 0;">
+                    <i class="fas fa-gears" style="margin-right: 5px;"></i> 3-Axis Spline &amp; Dual Dynamometer
+                  </p>
+                  <i class="fas fa-arrow-up-right-from-square" style="color: var(--accent-gold); font-size: 0.95rem;"></i>
+                </div>
+                <h3>Automotive Transaxle Load &amp; Endurance Test Rig</h3>
+                <p class="desc">End-of-line drivetrain validation integrating 3-axis input spline engagement, Automatic Gear Shifting (AGS), dual output dynamometers, and inclined oil recovery.</p>
+              </div>
+              <div>
+                <span class="spec-tag">Explore Transaxle Test Rig →</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 3: End-of-Line (EOL) EV Motor & Transaxle Test Rig -->
+        <a href="ev-motor-testing.html" class="system-card-link" style="display: flex; text-decoration: none; color: inherit; height: 100%;">
+          <div class="system-card">
+            <div class="system-img-wrap">
+              <span class="system-overlay-tag">Project 03 • EV Powertrain OEM</span>
+              <img src="project6.png" alt="End-of-Line EV Motor & Transaxle Test Rig">
+            </div>
+            <div class="system-body">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <p style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin: 0;">
+                    <i class="fas fa-bolt" style="margin-right: 5px;"></i> Multi-Conveyor EOL • EV Drivetrain
+                  </p>
+                  <i class="fas fa-arrow-up-right-from-square" style="color: var(--accent-gold); font-size: 0.95rem;"></i>
+                </div>
+                <h3>End-of-Line (EOL) EV Motor &amp; Transaxle Test Rig</h3>
+                <p class="desc">Automated 3-conveyor transfer architecture with transfer tables, quick-release oil filling, dual-side dynamometer loading, and vacuum oil evacuation.</p>
+              </div>
+              <div>
+                <span class="spec-tag">Explore EV Motor EOL Rig →</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 4: Differential Line Assembly & Quality Station -->
+        <a href="differential-assembly.html" class="system-card-link" style="display: flex; text-decoration: none; color: inherit; height: 100%;">
+          <div class="system-card">
+            <div class="system-img-wrap">
+              <span class="system-overlay-tag">Project 04 • Commercial Vehicle OEM</span>
+              <img src="project5.png" alt="Differential Line Assembly & Quality Station">
+            </div>
+            <div class="system-body">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <p style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin: 0;">
+                    <i class="fas fa-industry" style="margin-right: 5px;"></i> Assembly Fixturing &amp; Backlash QA
+                  </p>
+                  <i class="fas fa-arrow-up-right-from-square" style="color: var(--accent-gold); font-size: 0.95rem;"></i>
+                </div>
+                <h3>Differential Line Assembly &amp; Quality Station</h3>
+                <p class="desc">Sequential assembly line for crown gear, pinion shaft, and spider gear with bearing press-fit, multi-spindle nut runner torquing, backlash check, and air leak pin-marking.</p>
+              </div>
+              <div>
+                <span class="spec-tag">Explore Differential Line →</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 5: Wave Spring & Lattice Structure Optimization (Springer) -->
+        <a href="wave-spring.html" class="system-card-link" style="display: flex; text-decoration: none; color: inherit; height: 100%;">
+          <div class="system-card">
+            <div class="system-img-wrap">
+              <span class="system-overlay-tag">Research 01 • Springer Nature Published</span>
+              <img src="project1.gif" alt="Wave Spring & Lattice Structure Optimization">
+            </div>
+            <div class="system-body">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <p style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin: 0;">
+                    <i class="fas fa-cubes" style="margin-right: 5px;"></i> DOI: 10.1007/s40430-024-04936-5
+                  </p>
+                  <i class="fas fa-arrow-up-right-from-square" style="color: var(--accent-gold); font-size: 0.95rem;"></i>
+                </div>
+                <h3>Wave Spring &amp; Lattice Structure Optimization</h3>
+                <p class="desc">HP Multi Jet Fusion (MJF) 3D-printed PA-12 &amp; polypropylene crest-to-crest wave springs and pin-reinforced lattices with &lt;6% ANSYS FEA correlation error.</p>
+              </div>
+              <div>
+                <span class="spec-tag">Explore Springer Research →</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 6: High Entropy Alloy TIG Facing Surface Engineering -->
+        <a href="tig-facing.html" class="system-card-link" style="display: flex; text-decoration: none; color: inherit; height: 100%;">
+          <div class="system-card">
+            <div class="system-img-wrap">
+              <span class="system-overlay-tag">Research 02 • ISO 20808 Tribology</span>
+              <img src="project4.gif" alt="TIG Facing of AlCoCrFeNiCu High Entropy Alloy">
+            </div>
+            <div class="system-body">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <p style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin: 0;">
+                    <i class="fas fa-microscope" style="margin-right: 5px;"></i> 152 → 280 HV (1.84× Gain) • SEM/EDS
+                  </p>
+                  <i class="fas fa-arrow-up-right-from-square" style="color: var(--accent-gold); font-size: 0.95rem;"></i>
+                </div>
+                <h3>AlCoCrFeNiCu HEA TIG Facing Process Analysis</h3>
+                <p class="desc">Surface engineering on AISI 316 stainless steel achieving 1.84× microhardness gain and 50% dry-sliding wear reduction verified via SEM/EDS and ISO 20808 testing.</p>
+              </div>
+              <div>
+                <span class="spec-tag">Explore Metallurgical Study →</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       WORK EXPERIENCE, INTERNSHIP & ACHIEVEMENTS
+       ========================================== -->
+  <section class="projects-section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Career Trajectory &amp; Credentials</span>
+        <h2 class="section-title">Work Experience &amp; <span>Achievements</span></h2>
+        <p class="section-subtitle">
+          Proven track record in turnkey machine design, fluid power sizing, composite &amp; structural FEA simulation, and national-level engineering competitions.
+        </p>
+      </div>
+
+      <div class="projects-container">
+
+        <!-- Experience 1: Dynaspede Integrated Systems -->
+        <div class="project-row">
+          <div class="project-details">
+            <div class="project-meta-top">
+              <span class="proj-date">Nov 2023 – Present</span>
+            </div>
+            <h3>Engineer – Mechanical Design</h3>
+            <span class="proj-role">Growth Path: Mechanical Design Engineer (R&amp;D &amp; Turnkey Automation)</span>
+            <p>
+              Leading end-to-end mechanical design of turnkey SPM test rigs, automated material handling conveyors, and end-of-line (EOL) testing equipment for Tier-1 commercial vehicle and EV drivetrain OEMs.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>SPM &amp; Test Rig Modeling:</strong> Complete 3D CAD modeling and detailed 2D fabrication drafting in SolidWorks applying ASME Y14.5 / ISO GD&amp;T for precise tolerance stack-up.</li>
+              <li><strong>Fluid Power Sizing (160 ± 10 Bar):</strong> Engineered hydraulic &amp; pneumatic circuits (40–60 LPM flow, 160 ± 10 bar pressure), sizing cylinders, proportional valves, manifolds, and 10–55 kW drive motors with sequential relief valves.</li>
+              <li><strong>Chain Drive &amp; Power-Raised Conveyors:</strong> Designed dual-strand chain conveyors and pneumatic power-raised roller conveyors with lift-and-locate stoppers achieving ±0.2 mm repeatability.</li>
+              <li><strong>Cross-Functional &amp; BOM Release:</strong> Synchronized load cells, LVDTs, pressure transducers, and torque meters with PLC controls teams; released full manufacturing BOMs and qualification matrices.</li>
+            </ul>
+            <div class="proj-tags-wrapper">
+              <span class="proj-tag">Turnkey SPM</span>
+              <span class="proj-tag">SolidWorks &amp; GD&amp;T</span>
+              <span class="proj-tag">160 ± 10 Bar Hydraulics</span>
+              <span class="proj-tag">±0.2 mm Conveyors</span>
+              <span class="proj-tag">DFM / DFA &amp; BOM</span>
+            </div>
+          </div>
+          <div class="project-media-wrap">
+            <img src="about.png" alt="Dynaspede Mechanical Design Engineering">
+          </div>
+        </div>
+
+        <!-- Experience 2: AvironiX Drones & Academic Credentials -->
+        <div class="project-row reversed">
+          <div class="project-details">
+            <div class="project-meta-top">
+              <span class="proj-date">Jul 2022 – Mar 2023</span>
+            </div>
+            <h3>Structural &amp; FEA Simulation Intern + Academic Excellence</h3>
+            <span class="proj-role">M.Tech Aeronautical Engg. (9.55 CGPA) • B.E. Mechanical Engg. (8.57 CGPA)</span>
+            <p>
+              Executed advanced structural, composite, and modal vibration simulations for unmanned aerial vehicle (UAV) airframes and landing gear systems while completing postgraduate research with distinction.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>ANSYS ACP Composite Analysis:</strong> Modeled composite laminate layups and fiber orientations in ANSYS Composite PrepPost (ACP), evaluating Tsai-Wu and Hashin failure criteria on drone structures.</li>
+              <li><strong>Static &amp; Impact Touchdown FEA:</strong> Verified stresses, deflections, and wave-spring landing gear shock absorption under maximum aerodynamic and hard-landing payload cases.</li>
+              <li><strong>Modal Analysis (Free-Free &amp; Fixed-Free):</strong> Conducted unconstrained (Free-Free) and cantilevered rotor-arm (Fixed-Free) modal simulations to decouple structural resonance from propeller excitation frequencies.</li>
+              <li><strong>Academic Distinction:</strong> M.Tech in Aeronautical Engineering at HITS Chennai (<strong>CGPA: 9.55 / 10</strong>) &amp; B.E. in Mechanical Engineering (<strong>CGPA: 8.57 / 10</strong>).</li>
+            </ul>
+            <div class="proj-tags-wrapper">
+              <span class="proj-tag">ANSYS ACP Composites</span>
+              <span class="proj-tag">Free-Free &amp; Fixed Modal</span>
+              <span class="proj-tag">Tsai-Wu / Hashin</span>
+              <span class="proj-tag">M.Tech 9.55 CGPA</span>
+            </div>
+          </div>
+          <div class="project-media-wrap">
+            <img src="video1.gif" alt="ANSYS FEA & Structural Simulation">
+          </div>
+        </div>
+
+        <!-- Experience 3: Honors & Awards (MEGA ATV Championship & Project Expo) -->
+        <div class="project-row">
+          <div class="project-details">
+            <div class="project-meta-top">
+              <span class="proj-company">AUTOSPORTS INDIA</span>
+              <span class="proj-date">National Level Honors</span>
+            </div>
+            <h3>MEGA ATV Championship &amp; Gearless Transmission Innovation</h3>
+            <span class="proj-role">Core Member — TEAM BOLT (2019) • 4th Place — SCE Project Expo</span>
+            <p>
+              Demonstrated hands-on mechanical fabrication, vehicle dynamics engineering, and mechanism design in competitive national motorsport and academic innovation expos.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>MEGA ATV Championship 2019 (Team BOLT):</strong> Engineered off-road suspension kinematics, steering geometry, drivetrain integration, and custom acrylic chassis fairing for national endurance trials.</li>
+              <li><strong>Endurance &amp; Chassis Dynamics:</strong> Validated roll-cage structural integrity, wheel travel, and braking stability across extreme off-road obstacle courses.</li>
+              <li><strong>Project Expo — 4th Place Winner:</strong> Designed and fabricated a functioning 90-degree <em>Gearless Transmission (Elbow Mechanism)</em> demonstrating smooth torque transmission across perpendicular shafts.</li>
+            </ul>
+            <div class="proj-tags-wrapper">
+              <span class="proj-tag">MEGA ATV Championship</span>
+              <span class="proj-tag">Suspension &amp; Drivetrain</span>
+              <span class="proj-tag">90° Gearless Transmission</span>
+              <span class="proj-tag">Prototype Fabrication</span>
+            </div>
+          </div>
+          <div class="project-media-wrap">
+            <img src="atv.gif" alt="MEGA ATV Championship Team Bolt">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SKILLS & EXPERTISE SECTION (4 Category Cards)
+       ========================================== -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Technical Capabilities</span>
+        <h2 class="section-title">Skills &amp; <span>Expertise</span></h2>
+        <p class="section-subtitle">
+          Comprehensive mechanical engineering competencies spanning turnkey SPM design, high-pressure fluid power sizing, non-linear FEA simulations, and ASME/ISO production documentation.
+        </p>
+      </div>
+
+      <div class="skills-categories-grid">
+
+        <!-- Category 1: SPM & Test Rig Engineering -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-industry"></i></div>
+            <h3>SPM &amp; Test Rig Design</h3>
+          </div>
+          <ul class="skill-items-list">
+            <li>Turnkey SPM &amp; End-of-Line (EOL) Test Rigs</li>
+            <li>3-Axis Spline Engagement &amp; Precision Fixturing</li>
+            <li>Multi-Spindle Nut Runner &amp; Hydraulic Press Setups</li>
+            <li>Crown-Pinion Backlash &amp; Drivetrain QA</li>
+            <li>Chain Drive &amp; Power-Raised Conveyors (±0.2 mm)</li>
+            <li>DFM / DFA / DFMEA Implementation</li>
+          </ul>
+        </div>
+
+        <!-- Category 2: Fluid Power & System Sizing -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-oil-can"></i></div>
+            <h3>Fluid Power &amp; Sizing</h3>
+          </div>
+          <ul class="skill-items-list">
+            <li>Hydraulic Power Pack Design (160 ± 10 bar)</li>
+            <li>Pump, Cylinder, Valve &amp; Motor Sizing (10–55 kW)</li>
+            <li>Circuit Flow Calculations (20–60 LPM)</li>
+            <li>Pneumatic &amp; Electro-Pneumatic Circuitry</li>
+            <li>Air Leak Testing &amp; High-Pressure Sealing</li>
+            <li>IS 14269:1995 &amp; ATF Fluid Control Systems</li>
+          </ul>
+        </div>
+
+        <!-- Category 3: FEA, Simulation & R&D -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-cubes"></i></div>
+            <h3>FEA, Simulation &amp; R&amp;D</h3>
+          </div>
+          <ul class="skill-items-list">
+            <li>ANSYS Workbench (Static, Dynamic, Explicit)</li>
+            <li>ANSYS ACP (Composite Layups &amp; Tsai-Wu/Hashin)</li>
+            <li>Modal Analysis (Free-Free &amp; Fixed-Free Modes)</li>
+            <li>Non-Linear Metamaterial &amp; Lattice Optimization</li>
+            <li>HP Multi Jet Fusion (MJF) 3D Printing R&amp;D</li>
+            <li>ISO 20808 Tribology &amp; SEM/EDS Characterization</li>
+          </ul>
+        </div>
+
+        <!-- Category 4: CAD, GD&T & Documentation -->
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon"><i class="fas fa-drafting-compass"></i></div>
+            <h3>CAD, GD&amp;T &amp; Release</h3>
+          </div>
+          <ul class="skill-items-list">
+            <li>3D Solid/Surface Modeling &amp; 2D Detailing</li>
+            <li>GD&amp;T per ASME Y14.5 &amp; ISO Standards</li>
+            <li>Tolerance Stack-Up &amp; Datum Alignment</li>
+            <li>Manufacturing BOMs &amp; ERP / SAP Release</li>
+            <li>Bought-Out Component Specifications</li>
+            <li>Customer Technical Reviews &amp; Buy-Offs</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SOFTWARE PROFICIENCY
+       ========================================== -->
+  <section class="software-section" id="software">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Digital Engineering Suite</span>
+        <h2 class="section-title">Software <span>Proficiency</span></h2>
+        <p class="section-subtitle">
+          Specialized proficiency in industry-leading 3D CAD parametric modeling, multi-physics finite element analysis, 2D production drafting, and engineering calculation tools.
+        </p>
+      </div>
+
+      <div class="software-grid">
+
+        <!-- SolidWorks & CATIA V5 -->
+        <div class="software-card">
+          <div class="software-icon-wrap">
+            <i class="fas fa-cube"></i>
+          </div>
+          <h4>SolidWorks &amp; CATIA V5</h4>
+          <p>Large SPM assembly modeling, weldments, sheet metal, mechanism kinematics, and ASME Y14.5 production drawings.</p>
+          <span class="software-level">Expert (3+ Yrs)</span>
+        </div>
+
+        <!-- ANSYS Workbench & ACP -->
+        <div class="software-card">
+          <div class="software-icon-wrap">
+            <i class="fas fa-bezier-curve"></i>
+          </div>
+          <h4>ANSYS Workbench &amp; ACP</h4>
+          <p>Static structural, non-linear explicit dynamics, Free-Free/Fixed-Free modal analysis, and composite PrepPost (ACP).</p>
+          <span class="software-level">Advanced Specialist</span>
+        </div>
+
+        <!-- AutoCAD & DraftSight -->
+        <div class="software-card">
+          <div class="software-icon-wrap">
+            <i class="fas fa-compass-drafting"></i>
+          </div>
+          <h4>AutoCAD &amp; DraftSight</h4>
+          <p>High-precision 2D plant layouts, conveyor floor plans, hydraulic/pneumatic schematics, and fabrication detailing.</p>
+          <span class="software-level">Expert</span>
+        </div>
+
+        <!-- Python, MATLAB & Excel-VBA -->
+        <div class="software-card">
+          <div class="software-icon-wrap">
+            <i class="fas fa-code"></i>
+          </div>
+          <h4>Python, MATLAB &amp; VBA</h4>
+          <p>Automated hydraulic pump/motor sizing calculators, sensor data processing, and ERP/SAP BOM automation.</p>
+          <span class="software-level">Proficient</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CORPORATE FOOTER & CONTACT (EnveeTech Style)
+       ========================================== -->
+  <footer class="main-footer" id="contact">
+    <div class="container">
+
+      <!-- Big Call to Action Box -->
+      <div class="footer-cta-box">
+        <h2>Let's Collaborate On Your Next Engineering Project</h2>
+        <p>
+          Looking for a results-oriented Mechanical Design Engineer specializing in Special Purpose Machines (SPM), automated OEM test rigs, hydraulic systems, and ANSYS FEA simulation? Let's connect.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="mailto:venkatasubramanian.mechaero@gmail.com" class="btn-gold-pill">
+            <i class="fas fa-envelope"></i> Send Project / Role Inquiry
+          </a>
+          <a href="tel:+919080030345" class="btn-outline-pill">
+            <i class="fas fa-phone"></i> Call +91 90800 30345
+          </a>
+        </div>
+      </div>
+
+      <!-- Direct Contact Cards -->
+      <div class="contact-cards-grid">
+
+        <div class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <h4>Email Address</h4>
+          <a href="mailto:venkatasubramanian.mechaero@gmail.com">venkatasubramanian.mechaero@gmail.com</a>
+        </div>
+
+        <div class="contact-card">
+          <i class="fas fa-phone-volume"></i>
+          <h4>Phone / Mobile</h4>
+          <a href="tel:+919080030345">+91 90800 30345</a>
+        </div>
+
+        <div class="contact-card">
+          <i class="fab fa-linkedin"></i>
+          <h4>LinkedIn Profile</h4>
+          <a href="https://www.linkedin.com/in/venkata-subramanian-m-412353201/" target="_blank">linkedin.com/in/venkata-subramanian-m</a>
+        </div>
+
+        <div class="contact-card">
+          <i class="fas fa-location-dot"></i>
+          <h4>Base Location</h4>
+          <span>Bangalore, Karnataka, India<br><small>(Open to Machine Design &amp; R&amp;D Roles)</small></span>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>Venkata Subramanian M</strong> | Mechanical Design, SPM, Test Rigs &amp; FEA Portfolio.
+        </div>
+        <div class="footer-socials">
+          <a href="mailto:venkatasubramanian.mechaero@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+919080030345" title="Call"><i class="fas fa-phone"></i></a>
+          <a href="https://wa.me/919080030345" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.linkedin.com/in/venkata-subramanian-m-412353201/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#home" title="Top"><i class="fas fa-arrow-up"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <a href="#home" class="back-to-top visible" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+
+  <!-- ==========================================
+       INTERACTIVE JAVASCRIPT
+       ========================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu Toggle
+      const mobileToggle = document.getElementById('mobileToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      mobileToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        const icon = mobileToggle.querySelector('i');
+        if (navLinks.classList.contains('open')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          const icon = mobileToggle.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        });
+      });
+
+      // 2. Back to Top Button Visibility on Scroll
+      const backToTopBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+
+      // 3. Active Nav Highlighting on Scroll
+      const sections = document.querySelectorAll('section, footer');
+      const navAnchors = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
+      window.addEventListener('scroll', () => {
+        let current = 'home';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 150;
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navAnchors.forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === `#${current}`) {
+            a.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
