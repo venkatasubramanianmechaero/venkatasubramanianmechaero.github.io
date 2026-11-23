@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wave Spring & Lattice Structure Optimization | Venkata Subramanian M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #070b12;
+      --bg-card: rgba(10, 18, 32, 0.94);
+      --border-cyan: rgba(0, 212, 255, 0.42);
+      --primary: #00d4ff;
+      --accent: #00f5d4;
+      --text-white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.8;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.15rem 3.5rem;
+      background: rgba(6, 12, 22, 0.95);
+      border-bottom: 2px solid var(--border-cyan);
+      z-index: 1000;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: var(--text-white);
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #041019;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #041019;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 800;
+      transition: all 0.25s ease;
+    }
+    .back-btn:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+    main {
+      max-width: 1140px;
+      margin: 3rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .study-section {
+      background: var(--bg-card);
+      border: 2px solid var(--border-cyan);
+      border-radius: 22px;
+      padding: 2.8rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.2rem;
+    }
+    .badge {
+      font-size: 0.98rem;
+      font-weight: 700;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      background: rgba(0, 212, 255, 0.2);
+      border: 1.5px solid var(--primary);
+      color: var(--text-white);
+    }
+    .badge.pub {
+      background: rgba(0, 245, 212, 0.18);
+      border-color: var(--accent);
+    }
+    h1, h2 {
+      color: var(--primary);
+      font-size: clamp(2rem, 3.8vw, 2.75rem);
+      font-weight: 800;
+      margin-bottom: 1.1rem;
+      line-height: 1.2;
+    }
+    h3 {
+      color: var(--primary);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin: 2rem 0 0.8rem;
+    }
+    p {
+      color: var(--text-white);
+      font-size: 1.18rem;
+      font-weight: 500;
+      line-height: 1.85;
+      margin-bottom: 1.1rem;
+    }
+    .abstract-box {
+      padding: 1.5rem 1.8rem;
+      border-radius: 14px;
+      background: rgba(0, 212, 255, 0.12);
+      border-left: 5px solid var(--primary);
+      margin-bottom: 1.8rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+      color: var(--text-white);
+      font-size: 1.18rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.4rem;
+      margin: 2rem 0;
+    }
+    .gallery-item {
+      background: #000;
+      border: 2px solid var(--primary);
+      border-radius: 16px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .doi-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.6rem;
+      border-radius: 12px;
+      background: var(--primary);
+      color: #041019;
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: all 0.25s ease;
+    }
+    .doi-card:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+    .project-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    footer {
+      text-align: center;
+      padding: 2.2rem;
+      color: var(--text-white);
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-top: 2px solid var(--border-cyan);
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.2rem; }
+      .study-section { padding: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <div class="brand-badge">VS</div>
+      <span>VENKATA SUBRAMANIAN M</span>
+    </a>
+    <a href="index.html#research" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+  </nav>
+
+  <main>
+    <!-- PART 1: WAVE SPRING -->
+    <section class="study-section">
+      <div class="badge-row">
+        <span class="badge">Part I • Additive Manufacturing &amp; FEA</span>
+        <span class="badge pub"><i class="fas fa-file-alt"></i> Pre-Print Publication</span>
+      </div>
+      <h1>Wave Spring Optimization</h1>
+
+      <div class="abstract-box">
+        <p style="margin-bottom:0;">
+          <strong>Abstract:</strong> The project investigates the response of polymer-based wave springs fabricated using Multi Jet Fusion (MJF) additive manufacturing. Different infill densities were applied to optimize mechanical properties. The study evaluated stiffness, plateau stress, and energy absorption, integrating both experimental and simulation approaches.
+        </p>
+      </div>
+
+      <h3>1. Introduction</h3>
+      <p>
+        Wave springs are advanced mechanical elements used to absorb loads in confined spaces. The objective of this research is to design a polymer wave spring using flexible PA-12 material and analyze its response under compressive loading conditions.
+      </p>
+
+      <h3>2. Methodology</h3>
+      <ul>
+        <li>Modeling performed using CAD software (SolidWorks)</li>
+        <li>Manufacturing executed via MJF with PA-12 polymer</li>
+        <li>Test specimens included 80%, 90%, and 100% infill density</li>
+        <li>Simulations conducted in ANSYS Static Structural Module</li>
+      </ul>
+
+      <h3>3. Results and Discussion</h3>
+      <p>
+        Results showed increasing infill density significantly raised the spring’s stiffness. The 100% infill spring exhibited maximum plateau stress. Simulation results matched experimental behavior with an error margin under 6%.
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="video1.gif" alt="Wave Spring Simulation 1">
+        </div>
+        <div class="gallery-item">
+          <img src="video2.gif" alt="Wave Spring Simulation 2">
+        </div>
+        <div class="gallery-item">
+          <img src="converted_image.png" alt="Wave Spring Simulation 3">
+        </div>
+      </div>
+
+      <h3>4. Optimization</h3>
+      <p>
+        Using simulation, optimized spring geometry was achieved by modifying pitch angle and number of crests. This led to increased energy absorption without compromising compact design needs.
+      </p>
+
+      <h3>5. Conclusion</h3>
+      <p>
+        Wave springs produced via MJF demonstrated strong potential in replacing metallic springs for moderate-load applications. Structural integrity, customization, and additive manufacturability prove its feasibility.
+      </p>
+
+      <h3>6. Pre-Print Publication</h3>
+      <a href="https://doi.org/10.21203/rs.3.rs-2942067/v1" target="_blank" rel="noopener noreferrer" class="doi-card">
+        <i class="fas fa-external-link-alt"></i> https://doi.org/10.21203/rs.3.rs-2942067/v1
+      </a>
+    </section>
+
+    <!-- PART 2: LATTICE STRUCTURE -->
+    <section class="study-section">
+      <div class="badge-row">
+        <span class="badge">Part II • Cellular Metamaterials</span>
+        <span class="badge pub"><i class="fas fa-award"></i> Published in Springer Journal</span>
+      </div>
+      <h2>Lattice Structure</h2>
+
+      <div class="abstract-box">
+        <p style="margin-bottom:0;">
+          <strong>Abstract:</strong> The lattice structure is derived from crest-to-crest wave spring geometry to enhance load-bearing capacity and energy absorption characteristics. Additive manufacturing enables complex overlapped and pin-reinforced lattice configurations.
+        </p>
+      </div>
+
+      <h3>1. Introduction</h3>
+      <p>
+        Lattice structures provide superior energy absorption compared to conventional foam-based cores. In this work, lattice structures are developed from overlapped and non-overlapped crest-to-crest wave springs with pin reinforcements.
+      </p>
+
+      <h3>2. Design Concept</h3>
+      <ul>
+        <li>Overlapped crest-to-crest wave spring treated as lattice core</li>
+        <li>Pin-reinforced lattice configurations with 5 and 10 pins</li>
+        <li>Without-overlap lattice structures for comparative study</li>
+      </ul>
+
+      <h3>3. Manufacturing Process</h3>
+      <ul>
+        <li>Fabricated using HP Multi Jet Fusion (MJF)</li>
+        <li>Material: Polypropylene / polymer-based material</li>
+        <li>Post-processing by bead blasting technique</li>
+      </ul>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="video3.gif" alt="Overlapped Lattice Structure">
+        </div>
+        <div class="gallery-item">
+          <img src="video4.gif" alt="Lattice Compression Behavior 1">
+        </div>
+        <div class="gallery-item">
+          <img src="video5.gif" alt="Lattice Compression Behavior 2">
+        </div>
+      </div>
+
+      <h3>4. Mechanical Characterization</h3>
+      <p>
+        Compression tests were conducted under quasi-static loading conditions. Load–compression and stress–strain responses were used to evaluate stiffness, plateau stress, densification strain, and energy absorption efficiency.
+      </p>
+
+      <h3>5. Results and Discussion</h3>
+      <p>
+        Overlapped lattice structures with higher pin count exhibited superior plateau stress due to improved load distribution and buckling resistance. Non-overlapped lattice structures showed higher densification strain but reduced stiffness.
+      </p>
+
+      <h3>6. Energy Absorption Characteristics &amp; Conclusion</h3>
+      <p>
+        The compression response of lattice structures consists of elastic, plateau, and densification regions. Maximum energy absorption occurs within the plateau region. Overlapped and pin-reinforced lattice configurations provide improved mechanical performance suitable for cushioning, vibration isolation, and impact mitigation.
+      </p>
+
+      <h3>7. Springer Publication</h3>
+      <a href="https://doi.org/10.1007/s40430-024-04936-5" target="_blank" rel="noopener noreferrer" class="doi-card">
+        <i class="fas fa-external-link-alt"></i> https://doi.org/10.1007/s40430-024-04936-5
+      </a>
+    </section>
+
+    <div class="project-nav">
+      <a href="transaxle-test-rig.html" class="back-btn"><i class="fas fa-arrow-left"></i> Prev: Transaxle Test Rig</a>
+      <a href="tig-facing.html" class="back-btn">Next: TIG Facing HEA Study <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Venkata Subramanian M | Wave Spring &amp; Lattice Structure Project Page</p>
+  </footer>
+
+</body>
+</html>

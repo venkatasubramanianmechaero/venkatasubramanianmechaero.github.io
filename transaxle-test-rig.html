@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automotive Transaxle Load &amp; Endurance Test Rig | Venkata Subramanian M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #070b14;
+      --bg-card: rgba(16, 24, 40, 0.88);
+      --accent-gold: #ffb703;
+      --accent-cyan: #00d4ff;
+      --text-white: #ffffff;
+      --text-muted: #cbd5e1;
+      --border-subtle: rgba(255, 255, 255, 0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.75;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 4rem;
+      background: rgba(7, 11, 20, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 1000;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-white);
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: rgba(10, 18, 34, 0.9);
+      border: 1.5px solid var(--accent-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-gold);
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 22px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #ffb703 0%, #ffa200 100%);
+      color: #070b14;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 183, 3, 0.4);
+    }
+    main {
+      max-width: 1180px;
+      margin: 3rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .hero-card, .content-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2.6rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 1.2rem;
+    }
+    .badge {
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: rgba(0, 212, 255, 0.12);
+      border: 1px solid rgba(0, 212, 255, 0.35);
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .badge.gold {
+      background: rgba(255, 183, 3, 0.14);
+      border-color: rgba(255, 183, 3, 0.45);
+      color: var(--accent-gold);
+    }
+    h1 {
+      font-size: clamp(2rem, 3.8vw, 2.75rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    h1 span { color: var(--accent-cyan); }
+    h2 {
+      color: var(--accent-gold);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .media-box {
+      background: #040811;
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.2rem;
+      text-align: center;
+    }
+    .media-box img {
+      width: 100%;
+      height: 290px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .media-caption {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      margin-top: 0.8rem;
+    }
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .step-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.1rem;
+      padding: 1.3rem 1.5rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+    }
+    .step-num {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #070b14;
+      background: var(--accent-gold);
+      min-width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .step-body {
+      color: #f1f5f9;
+      font-size: 1.05rem;
+    }
+    .sub-points {
+      margin-top: 0.7rem;
+      padding-left: 1.4rem;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+    .sub-points li { margin-bottom: 0.4rem; }
+    .project-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.2rem; }
+      .hero-card, .content-card { padding: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <div class="brand-badge">V</div>
+      <span>VENKATA SUBRAMANIAN M</span>
+    </a>
+    <a href="index.html#systems" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+  </nav>
+
+  <main>
+    <div class="hero-card">
+      <div class="badge-row">
+        <span class="badge">Client: Major Automotive OEM (Tata Transaxle)</span>
+        <span class="badge gold"><i class="fas fa-gears"></i> 3-Axis Spline Engagement &amp; Dual Dynamometer</span>
+      </div>
+      <h1>Automotive Transaxle Load &amp; <span>Endurance Test Rig</span></h1>
+      <p>
+        A transaxle combines a transmission, differential, and axle into one compact unit, commonly used in front-wheel-drive (FWD) or rear-engine vehicles. Designed an automated end-of-line test bed integrating a 3-axis precision spline engagement system for the input drive motor, dual-output dynamometer loading setups for speed/torque profiling, automated seal pressing, and pneumatic diaphragm pump evacuation for lube oil recovery.
+      </p>
+
+      <div class="media-grid">
+        <div class="media-box">
+          <img src="LAYOUT_Automotive Transaxle Load &amp; Endurance Test Rig.png" alt="Automotive Transaxle Load & Endurance Test Rig Isometric View">
+          <div class="media-caption">Fig 1. Isometric View — Automotive Transaxle Load &amp; Endurance Test Rig</div>
+        </div>
+        <div class="media-box">
+          <img src="project7.png" alt="Transaxle Unit Under Test">
+          <div class="media-caption">Fig 2. Automotive Transaxle Unit Under Test (UUT)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <h2><i class="fas fa-tasks"></i> Transaxle Testing Layout &amp; Operating Procedures</h2>
+      <div class="steps-list">
+        <div class="step-card">
+          <span class="step-num">01</span>
+          <div class="step-body"><strong>Loading of Transaxle:</strong> Precision pallet loading and datum clamping of the transaxle unit.</div>
+        </div>
+        <div class="step-card">
+          <span class="step-num">02</span>
+          <div class="step-body"><strong>Output Seal Pressing:</strong> Automated pressing of the oil seal on the output side of the transaxle.</div>
+        </div>
+        <div class="step-card">
+          <span class="step-num">03</span>
+          <div class="step-body"><strong>Pneumatic Air Leak Testing:</strong> Cavity sealing verification using a calibrated air reservoir and pneumatic test setup.</div>
+        </div>
+        <div class="step-card">
+          <span class="step-num">04</span>
+          <div class="step-body"><strong>Metered Lubricant Filling:</strong> Passed air-leak tested transaxles are filled with lubricating oil using a digital Flow Meter and Oil Transfer Port (OTP) adaptor.</div>
+        </div>
+        <div class="step-card">
+          <span class="step-num">05</span>
+          <div class="step-body">
+            <strong>Multi-Ratio Dynamometer Load Testing:</strong> Conducted at the output side of the transaxle at specified torque and speed profiles across gear ratios:
+            <ul class="sub-points">
+              <li>Gear Shifter and Gear Selector of the transaxle are actuated manually or via an Automatic Gear Shifting (AGS) system.</li>
+              <li>Input spline shaft on the transaxle is engaged to the spline adaptor (input drive motor) via a 3-axis positioning setup.</li>
+              <li>Both left and right output shafts are simultaneously loaded by independent Dynamometers.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="step-card">
+          <span class="step-num">06</span>
+          <div class="step-body"><strong>Straight &amp; Inclined Oil Draining Station:</strong> Uses pneumatic actuation and a Diaphragm Pump to evacuate lubricating oil from the transaxle in both straight and inclined pallet orientations.</div>
+        </div>
+        <div class="step-card">
+          <span class="step-num">07</span>
+          <div class="step-body"><strong>OTP Adaptor &amp; Output Shaft Disengagement:</strong> Automated retraction of test couplings.</div>
+        </div>
+        <div class="step-card">
+          <span class="step-num">08</span>
+          <div class="step-body"><strong>Unloading:</strong> Final release and unloading of the validated transaxle assembly.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-nav">
+      <a href="hydraulic-testbed.html" class="back-btn"><i class="fas fa-arrow-left"></i> Prev: Hydraulic Steering Rig</a>
+      <a href="ev-motor-testing.html" class="back-btn">Next: EV Motor EOL Test Rig <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Venkata Subramanian M | Automotive Transaxle Load &amp; Endurance Test Rig</p>
+  </footer>
+
+</body>
+</html>
